@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+            <link rel="stylesheet" type="text/css" th:href="@{'/css/bootstrap.min.css'}">
+            <script type="text/javascript" th:src="@{'/js/bootstrap.bundle.js'}"></script>
+        </head>
+        <body>
+
+        <div class="container">
+            <div th:insert="navbar.html"></div>
+        </div>
+
+
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped">
+                    <thead>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>SURNAME</th>
+                    <th>EXAM</th>
+                    <th>MARK</th>
+                    </thead>
+                    <tbody>
+                    <tr th:each="spis: ${spisoktar}" th:style="${spis.exam<=49? 'color:red;' : 'color:black;'}">
+                        <td th:text="${spis.id}"></td>
+                        <td th:text="${spis.name}"></td>
+                        <td th:text="${spis.surname}"></td>
+                        <td th:text="${spis.exam}"></td>
+                        <td th:text="${spis.mark}"></td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </body>
+</html>
